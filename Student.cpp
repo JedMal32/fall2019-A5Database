@@ -75,14 +75,14 @@ void Student::setMajor(string ma){
 }
 
 void Student::setGPA(double gp){
-  gPA = d;
+  gPA = gp;
 }
 
 void Student::setFID(int fa){
   facultyID = fa;
 }
 
-bool Student::operator==(const Student &s){
+bool Student::operator==(Student &s){
   if (studentID == s.getStudentID()){
     return true;
   }
@@ -91,7 +91,7 @@ bool Student::operator==(const Student &s){
   }
 }
 
-bool Student::operator!=(const Student &s){
+bool Student::operator!=(Student &s){
   if (studentID != s.getStudentID()){
     return true;
   }
@@ -100,7 +100,7 @@ bool Student::operator!=(const Student &s){
   }
 }
 
-bool Student::operator<(const Student &s){
+bool Student::operator<(Student &s){
   if (studentID < s.getStudentID()){
     return true;
   }
@@ -109,7 +109,7 @@ bool Student::operator<(const Student &s){
   }
 }
 
-bool Student::operator>(const Student &s){
+bool Student::operator>(Student &s){
   if (studentID > s.getStudentID()){
     return true;
   }

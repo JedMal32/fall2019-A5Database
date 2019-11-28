@@ -17,6 +17,6 @@ ListNode<t>::ListNode(t d){
 
 template<typename t>
 ListNode<t>::~ListNode(){
-  next == NULL;
-  prev == NULL;
+  next = NULL;
+  prev = NULL;
 }

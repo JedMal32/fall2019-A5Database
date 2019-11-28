@@ -63,6 +63,17 @@ t GenLinkedList<t>::removeFront(){
 }
 
 template<typename t>
+t GenLinkedList<t>::getFront(){
+  if(isEmpty()){
+    cout << "List is Empty! Nothing to remove." << endl;
+  }else{
+    ListNode<t> *ft = front; //ft is temp pointer
+    return ft->data; //returns value
+  }
+}
+
+
+template<typename t>
 t GenLinkedList<t>::removeBack(){
   if(isEmpty()){
     cout << "List is Empty! Nothing to remove." << endl;
@@ -86,10 +97,12 @@ template<typename t>
 t GenLinkedList<t>::removePosition(int position){ //aka int key
   if(isEmpty()){
     cout << "List is Empty! Nothing to remove." << endl;
-  }else{
+  }
+  else{
     if(position == 0){
-      removeFront();
-    }else{
+      return removeFront();
+    }
+    else{
       int index = 0;
       ListNode<t> *curr = front;
       while(index != position){
@@ -133,6 +146,7 @@ template<typename t>
 t GenLinkedList<t>::peekPosition(int position){
   if(isEmpty()){
     cout << "List is Empty! Cannot peek." << endl;
+    return NULL;
   }else{
     int index = 0;
     ListNode<t> *curr = front;

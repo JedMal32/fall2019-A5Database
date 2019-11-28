@@ -5,12 +5,12 @@ using namespace std;
 
 class Student : public Affiliate{
 private:
-   int studentID = 0;
+   int studentID;
    string name;
    string level;
    string major;
-   double gPA = 0;
-   int facultyID = 0;
+   double gPA;
+   int facultyID;
 
 public:
    Student();
@@ -36,9 +36,9 @@ public:
    void setFID(int fa);
 
    //operators for comparison
-   bool operator==(const Student &s); // &s, if pointer
-   bool operator!=(const Student &s);
-   bool operator<(const Student &s);
-   bool operator>(const Student &s);
+   bool operator==(Student &s); // &s, if pointer
+   bool operator!=(Student &s);
+   bool operator<(Student &s);
+   bool operator>(Student &s);
 
 };

@@ -7,9 +7,12 @@ template<typename t>
 class BST{
   private:
     TreeNode<t> *root;
+
   public:
     BST();
     ~BST();
+
+    int size;
 
     bool search(int value); //returns bool for whether or not the space exists
     void insert(t value);
@@ -20,4 +23,6 @@ class BST{
     TreeNode<t> * getMax();
     void printTree();
     void recPrint(TreeNode<t> *node);
+    TreeNode<t> * getNode(t value);
+    TreeNode<t> * getRoot();
 };

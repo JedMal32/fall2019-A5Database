@@ -16,6 +16,7 @@ class GenLinkedList{
     void insertFront(t d);
     void insertBack(t d);
     t removeFront();
+    t getFront();
     t removeBack();
     t removePosition(int position);
     int find(t d); //returns position of a value

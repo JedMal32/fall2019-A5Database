@@ -7,6 +7,7 @@ using namespace std;
 template<typename t>
 BST<t>::BST(){
   root = NULL;
+  size = 0;
 }
 
 template<typename t>
@@ -36,6 +37,7 @@ bool BST<t>::search(int value){
 
 template<typename t>
 void BST<t>::insert(t input){
+  size++;
   TreeNode<t> *node = new TreeNode<t>(input);
   int value = node->key;
   if(root == NULL){ //tree is empty empty
@@ -71,6 +73,7 @@ bool BST<t>::deleteNode(int value){
     return false;
   }
   //Tree is not empty
+  size--;
   TreeNode<t> *current = root;
   TreeNode<t> *parent = NULL;;
   bool isLeft = true;
@@ -200,4 +203,32 @@ void BST<t>::recPrint(TreeNode<t> *node){
   recPrint(node->right);
   cout << node->key << endl;
   */
+}
+
+
+template<typename t>
+TreeNode<t> * BST<t>::getNode(t value){
+  if(root == NULL || !(search(value))){
+    return NULL;
+  }else{
+    TreeNode<t> *current = root;
+    while(current->key!=value){
+      if(value<current->key){
+        current = current->left;
+      }else{
+        current = current->right;
+      }
+      if(current==NULL){
+        return NULL;
+      }
+    }
+    return current;
+  }
+}
+
+template<typename t>
+TreeNode<t> * BST<t>::getRoot(){
+  if(size == 0)
+    return NULL;
+  return root;
 }

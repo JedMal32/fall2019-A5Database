@@ -4,13 +4,13 @@ using namespace std;
 
 class Affiliate{
 private:
-   string name = "";
-   int iD = 0;
+   string name;
+   int id;
 
 public:
    void setName(string s);
    string getName();
-   void setID(int i);
+   void setID(int id);
    int getID();
 
 };

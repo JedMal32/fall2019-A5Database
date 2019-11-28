@@ -6,18 +6,37 @@ using namespace std;
 
 class Faculty : public Affiliate{
 private:
-   string level = "";
-   GenLinkedList<int> * stuIDs = new GenLinkedList<int>();
+   int facultyID;
+   string name;
+   string level;
+   string department;
 
 public:
    Faculty();
-   Faculty(int i, string n, string l);
+   Faculty(int id, string na, string le, string de);
    ~Faculty();
 
-   void setLevel(string s);
+   void printInfo();
+
+   int getID();
+   string getName();
    string getLevel();
-   void addStuID(int i);
-   bool removeStuID(int i);
-   bool hasStuID(int i);
+   string getDepartment();
+
+   void setID(int id);
+   void setName(string na);
+   void setLevel(string le);
+   void setFacultyDepartment(string de);
+
+   void addStuID(int id);
+   bool removeStuID(int id);
+   bool hasStuID(int id);
+   GenLinkedList<int> * stuIDs = new GenLinkedList<int>();
+   int stuIDSize = stuIDs->getSize(); //fix?
+
+   bool operator==(Faculty &f);
+   bool operator!=(Faculty &f);
+   bool operator<(Faculty &f);
+   bool operator>(Faculty &f);
 
 };

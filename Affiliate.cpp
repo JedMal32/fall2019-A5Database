@@ -11,10 +11,10 @@ string Affiliate::getName(){
   return name;
 }
 
-void Affiliate::setID(int i){
-  iD = i;
+void Affiliate::setID(int id){
+  id = id;
 }
 
 int Affiliate::getID(){
-  return iD;
+  return id;
 }
